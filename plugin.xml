@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="cordova-plugin-ocr"
+        version="1.0.0">
+
+  <name>OCR Text recognition</name>
+
+  <author>S Bakalov</author>
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova-android" version=">=6.4.0" />
+    <engine name="cordova-ios" version=">=4.3.0" />
+  </engines>
+
+  <asset src="www/ocrtext.js" target="js/ocrtext.js"/>
+  
+  <js-module src="www/ocrtext.js" name="ocrtext">
+    <clobbers target="ocrtext" />
+  </js-module>
+
+
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="OCRText">
+        <param name="android-package" value="com.bszar.ocrplugin.OCRText"/>
+      </feature>
+    </config-file> 
+
+    <preference name="MLKIT_TEXT_RECOGNITION_VERSION" default="16.1.0"/>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <meta-data
+		      android:name="com.google.mlkit.vision.DEPENDENCIES"
+		      android:value="ocr" />
+    </config-file>
+   
+    <source-file src="src/android/OCRText.java" target-dir="src/com/bszar/ocrplugin/" />
+    <framework src="com.google.android.gms:play-services-mlkit-text-recognition:$MLKIT_TEXT_RECOGNITION_VERSION" />
+  
+  </platform>
+
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="TextRecognitionPlugin">
+        <param name="ios-package" value="TextRecognitionPlugin" />
+      </feature>
+    </config-file>
+  
+  
+    <preference name="CAMERA_USAGE_DESCRIPTION" default="This app needs camera access"/>
+    <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+        <string>$CAMERA_USAGE_DESCRIPTION</string>
+    </config-file>
+    
+    <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default="This app needs read/write-access photo library access"/>
+    <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+        <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
+    </config-file>
+
+    
+    <source-file src="src/ios/OCRText.swift" />
+    <header-file src="src/ios/OCRText.h" />
+    <header-file src="src/ios/OCRText-Bridging-Header.h" />
+    
+    <podspec>
+      <config>
+        <source url="https://cdn.cocoapods.org/"/>
+      </config>
+      <pods use-frameworks="true">
+        <pod name="GoogleMLKit/TextRecognition" />
+      </pods>
+    </podspec>
+
+  </platform>
+
+</plugin>

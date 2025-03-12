@@ -1,0 +1,38 @@
+{
+  "name": "cordova-plugin-ocr",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bszar/cordova-plugin-ocr"
+  },
+  "cordova": {
+    "id": "cordova-plugin-ocr",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "text",
+    "ocr",
+    "ML Kit",
+    "machine learning",
+    "text recognition",
+    "optical",
+    "character",
+    "recognition",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "mobile ocr"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "cordova-android": ">=6.4.0",
+      "cordova-ios": ">=4.3.0"}
+  },
+  "author": "S.Bakalov",
+  "license": "MIT",
+  "description": "cordova plugin for mobile ocr text recognition using google ml kit"
+}
