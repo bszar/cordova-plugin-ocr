@@ -1,6 +1,4 @@
 |[Introduction](#cordova-plugin-ocr) | [Supported_Platforms](#supported-platforms) | [Installation_Steps](#installation-steps) | 
-|:---:|:------:|:---:|:---:|:---:|:---:|
-|||||||
 
 
 # cordova-plugin-ocr
