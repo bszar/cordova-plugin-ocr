@@ -1,4 +1,4 @@
-|[Introduction](#cordova-plugin-ocr) | [Supported_Platforms](#supported-platforms) | [Installation_Steps](#installation-steps) 
+|[Introduction](#cordova-plugin-ocr) | [Supported_Platforms](#supported-platforms) | [Installation_Steps](#installation-steps) | 
 |:---:|:------:|:---:|:---:|:---:|:---:|
 |||||||
 
