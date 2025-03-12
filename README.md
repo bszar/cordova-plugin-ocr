@@ -5,7 +5,7 @@
 
 > This plugin was made possible because of Google's [ML Kit](https://firebase.google.com/docs/ml-kit/) SDK, as it is a dependency of this plugin. The supported languages are listed [here](https://developers.google.com/vision/android/text-overview). This plugin is absolutely free and will work offline once install is complete. All required files required for Text Recognition are downloaded during install if necessary space is available.
 
-This plugin defines a global `ocrtext` object, which provides an method that accepts image uri or base64 inputs. If some text was detected in the image, this text will be returned in an object. The imageuri or base64 can be send to the plugin using any another plugin like [cordova-plugin-camera](https://github.com/apache/cordova-plugin-camera) or [cordova-plugin-document-scanner](https://github.com/NeutrinosPlatform/cordova-plugin-document-scanner). Although the object is attached to the global scoped `window`, it is not available until after the `deviceready` event.
+This plugin defines a global `ocrtext` object, which provides an method that accepts base64 inputs. If some text was detected in the image, this text will be returned in an object. The imageuri or base64 can be send to the plugin using any another plugin like [cordova-plugin-camera](https://github.com/apache/cordova-plugin-camera). Although the object is attached to the global scoped `window`, it is not available until after the `deviceready` event.
 
 ```
 document.addEventListener("deviceready", onDeviceReady, false);
